@@ -1,0 +1,42 @@
+<div class="container main-container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <form id="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label class="center-block"> Nombre
+          <input class="form-control" formControlName="nombre">
+      </label>
+      <br>
+      <br>
+      <label class="center-block"> Email:
+          <input class="form-control" formControlName="email">
+      </label>
+      <br>
+      <br>
+      <label class="center-block"> Texto:
+          <input class="form-control" formControlName="texto">
+      </label>
+    </div>
+    <br>
+      <button type="submit"
+              [disabled]="!contactForm.valid"
+              class="btn btn-success"
+              text-align="center">
+                Save
+      </button>
+  </form>
+  <br>
+  <div *ngIf="showDiv">
+    <button>Botón 1</button>
+    <button>Botón 2</button>
+    <button>Botón 3</button>
+    <button>Botón 4</button>
+    <button>Botón 5</button>
+  </div>
+  <br>
+  <button type="button" (click)="validacion(2,2)">
+    {{ texto}}
+  </button>
+</div>
